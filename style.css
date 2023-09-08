@@ -23,7 +23,7 @@ body
     color:#fff;
     text-align: center;
     margin-top:2rem;
-    text-shadow: 5px 5px 5px black;
+    text-shadow: 7px 7px 7px black;
 }
 
 .titles h1 
@@ -51,6 +51,41 @@ body
     width:600px;
     height:300px;
     margin-bottom: 1rem;
+}
+
+/*Questions Contents*/
+.card-body .question-title h4
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-body .question-content
+{
+    font-size:17px;
+}
+
+.card-body .answers-content
+{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+.card-body .answers-content button
+{
+    width:250px;
+    height:35px;
+    border:none;
+    outline:none;
+    border-radius:25px;
+    background-color:lightgray;
+    cursor: pointer;
+}
+
+.card-body .answers-content button:hover
+{
+    background-color: darkslategray;
+    color:white;
 }
 
 /*Button Group*/
@@ -109,6 +144,24 @@ footer .brands:hover
 {
     color:black;
 }
+
+/*ScrollBar*/
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius:20px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 /*Responsive Layout's*/
 /*Telephone*/
