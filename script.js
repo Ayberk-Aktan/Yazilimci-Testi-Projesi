@@ -96,11 +96,11 @@ function selectedOption(option , questionNumber)
             }
         }
     }
-
-    //Results 
-    resultBtn.addEventListener("click" , () => {
-       const percent = (totalScore / 68) * 100;
-
-       alert(`Merhabalar Ben Ayberk Aktan. \n Bu Testi Çözdüğünüz İçin Teşekkür Ederim. \n Fakat Unutmayın Ki Yazılım Kolay Değildir ve Pes Etmeyenler Kazanır. \n Ey Meraklı Dost Umarım Bu Yolda Pes Etmezsin ve Kariyerin İyi Olur. \n Test Skorunuz %${percent} İyi Günler. `);
-    });
 }
+
+ //Results 
+ resultBtn.addEventListener("click" , () => {
+    const percent = (totalScore / 68) * 100;
+
+    alert(`Merhabalar Ben Ayberk Aktan. \n Bu Testi Çözdüğünüz İçin Teşekkür Ederim. \n Fakat Unutmayın Ki Yazılım Kolay Değildir ve Pes Etmeyenler Kazanır. \n Ey Meraklı Dost Umarım Bu Yolda Pes Etmezsin ve Kariyerin İyi Olur. \n Test Skorunuz %${percent} İyi Günler. `);
+ });
