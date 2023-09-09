@@ -119,6 +119,12 @@ body
     color:white;
 }
 
+.card-body .answers-content button.selected
+{
+    background-color: #555;
+    color:white;
+}
+
 /*Button Group*/
 .button-group
 {
