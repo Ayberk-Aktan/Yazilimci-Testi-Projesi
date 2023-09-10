@@ -45,7 +45,7 @@ const scores = {
     }
   
     alert(
-      `Merhabalar Ben Ayberk Aktan. \n Bu Testi Çözdüğünüz İçin Teşekkür Ederim. \n Fakat Unutmayın Ki Yazılım Kolay Değildir ve Pes Etmeyenler Kazanır. \n Ey Meraklı Dost Umarım Bu Yolda Pes Etmezsin ve Kariyerin İyi Olur. \n Test Skorunuz : ${totalScore} ve Durumunuz : ${status} İyi Günler. `
+      `Merhabalar Ben Ayberk Aktan. \n Bu Testi Çözdüğünüz İçin Teşekkür Ederim. \n Fakat Unutmayın Ki Yazılım Kolay Değildir ve Pes Etmeyenler Kazanır. \n Ey Meraklı Dost Umarım Bu Yolda Pes Etmezsin ve Kariyerin İyi Olur. \n Test Skorunuz : ${totalScore} ve Durumunuz : ${status} İyi Çalışmalar Diliyorum Hoşçakalın. `
     );
   });
   
