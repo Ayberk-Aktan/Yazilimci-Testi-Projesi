@@ -7,5 +7,5 @@
 <p>Bu projede en yüksek puan 40 tır.</p>
 <p>The highest score in this project is 40.</p>
 
-
+:link: https://www.linkedin.com/feed/update/urn:li:activity:7106450114436591616/
 
