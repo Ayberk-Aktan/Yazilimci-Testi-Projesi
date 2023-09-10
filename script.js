@@ -1,106 +1,51 @@
-//Test Calculating Result Functions
-
-let selectedOption = null;
-let totalScore = 0;
-let option = document.querySelector(".ansBtn");
-let resultBtn = document.querySelector("#resultBtn");
-
-function selectedOption(option , questionNumber)
-{
-    if(selectedOption)
-    {
-        selectedOption.classList.remove("selected");
+const scores = {
+    1: { "18 Yaş Altı": 10, "18 Yaş Üstü": 10 },
+    2: { "Çok İyi": 10, "İyi": 5, "Kötü": 3, "Çok Kötü": 2 },
+    3: { "Gergin": 3, "Kendinden Emin": 10, "Gergindir Fakat Problemi Çözebilir": 5, "Boşvermiş": 2 },
+    4: { "İyi Geçinen": 10, "Normal": 6, "Asosyal": 4 },
+    5: { "Para": 0, "Sevgi": 20 },
+    6: { "Araştırıp Soruştururum": 8, "Kendi Kafama Göre Giderim": 3, "Bilen Birine Danışırım": 7, "Daha Baştan Vazgeçerim": 2 }
+  };
+  
+  let totalScore = 0;
+  let selectedOptions = {}; 
+  let resultBtn = document.querySelector("#resultBtn");
+  
+  function selectOption(option, questionNumber) {
+    const selectedOptionText = option.textContent;
+    const questionScores = scores[questionNumber];
+  
+    if (selectedOptions[questionNumber]) {
+      selectedOptions[questionNumber].classList.remove("selected");
     }
-
-    option.classList.add("selected");
-    selectedOption = option;
-
-    //First Question
-    if(questionNumber === 1 && option.textContent === "18 Yaş Altı"){
-        totalScore += 10;
-        
-        if(questionNumber === 1 && option.textContent == "18 Yaş Üstü"){
-            totalScore += 10;
-        }
+  
+    option.classList.add("selected"); 
+    selectedOptions[questionNumber] = option;
+  
+    if (questionScores && questionScores[selectedOptionText] !== undefined) {
+      totalScore += questionScores[selectedOptionText];
     }
+  }
+  
+  function calculateTotalScore() {
+    return totalScore;
+  }
+  
+  resultBtn.addEventListener("click", () => {
+    const totalScore = calculateTotalScore();
 
-    //Second Question
-    else if(questionNumber === 2 && option.textContent === "Çok İyi"){
-        totalScore += 10;
-
-        if(questionNumber === 2 && option.textContent === "İyi"){
-            totalScore += 5;
-
-            if(questionNumber === 2 && option.textContent === "Kötü"){
-                totalScore += 3;
-
-                if(questionNumber === 2 && option.textContent === "Çok Kötü"){
-                    totalScore += 2;
-                }
-            }
-        }
+    var status;
+  
+    if (totalScore >= 30) {
+      status = "Süper! Yazılıma Yatkınlığın Daha İyi Tebrik Ederim.";
+    } else if (totalScore < 30 && totalScore >= 17) {
+      status = "Biraz Daha Çalışabilirsin Başarabilirsin!";
+    } else if (totalScore < 17 && totalScore >= 0) {
+      status = "Üzgünüm Maalesef Yazılıma Yatkın Değilsin";
     }
-
-    //Third Question
-    else if(questionNumber === 3 && option.textContent === "Gergin"){
-        totalScore += 3;
-
-        if(questionNumber === 3 && option.textContent === "Kendinden Emin"){
-            totalScore += 10;
-
-            if(questionNumber === 3 && option.textContent === "Gergindir Fakat Problemi Çözebilir"){
-                totalScore += 5;
-
-                if(questionNumber === 3 && option.textContent === "Boşvermiş"){
-                    totalScore += 2;
-                }
-            }
-        }
-    }
-
-    //Fourth Question
-    else if(questionNumber === 4 && option.textContent === "İyi Geçinen"){
-        totalScore += 10;
-
-        if(questionNumber === 4 && option.textContent === "Normal"){
-            totalScore += 6;
-
-            if(questionNumber === 4 && option.textContent === "Asosyal"){
-                totalScore += 4;
-            }
-        }
-    }
-
-    //Fifth Question 
-    else if(questionNumber === 5 && option.textContent === "Para"){
-        totalScore += 0;
-
-        if(questionNumber === 5 && option.textContent === "Sevgi"){
-            totalScore += 20;
-        }
-    }
-
-    //Sixth Question 
-    else if(questionNumber === 6 && option.textContent === "Araştırıp Soruştururum"){
-        totalScore += 8;
-
-        if(questionNumber === 6 && option.textContent === "Kendi Kafama Göre Giderim"){
-            totalScore += 3;
-
-            if(questionNumber === 6 && option.textContent === "Bilen Birine Danışırım"){
-                totalScore += 7;
-
-                if(questionNumber === 6 && option.textContent === "Daha Baştan Vazgeçerim"){
-                    totalScore += 2;
-                }
-            }
-        }
-    }
-}
-
- //Results 
- resultBtn.addEventListener("click" , () => {
-    const percent = (totalScore / 68) * 100;
-
-    alert(`Merhabalar Ben Ayberk Aktan. \n Bu Testi Çözdüğünüz İçin Teşekkür Ederim. \n Fakat Unutmayın Ki Yazılım Kolay Değildir ve Pes Etmeyenler Kazanır. \n Ey Meraklı Dost Umarım Bu Yolda Pes Etmezsin ve Kariyerin İyi Olur. \n Test Skorunuz %${percent} İyi Günler. `);
- });
+  
+    alert(
+      `Merhabalar Ben Ayberk Aktan. \n Bu Testi Çözdüğünüz İçin Teşekkür Ederim. \n Fakat Unutmayın Ki Yazılım Kolay Değildir ve Pes Etmeyenler Kazanır. \n Ey Meraklı Dost Umarım Bu Yolda Pes Etmezsin ve Kariyerin İyi Olur. \n Test Skorunuz : ${totalScore} ve Durumunuz : ${status} İyi Günler. `
+    );
+  });
+  
